@@ -1,0 +1,126 @@
+﻿@model Game
+
+@{
+    ViewData["Title"] = "Pig";
+}
+
+<div class="row">
+
+@* Game column *@
+<div class="col-7">
+
+    <ul class="list-group">
+    <li class="list-group-item">
+    <div class="row">
+    <div class="col">
+    <label class="me-1">@Model.Player1.Name:</label>
+    <label>@Model.Player1.Score</label>
+    </div>
+    <div class="col">   
+        <form asp-action="NewGame" method="post">   
+        <input type="submit" value="New Game" class="btn btn-outline-dark float-end" />
+        </form>
+        </div>
+        </div>
+
+
+        <div class="row">
+        <div class="col">
+        <label class="me-1">@Model.Player2.Name:</label>
+        <label>@Model.Player2.Score</label>
+        </div>
+        <div class="col">
+        </div>
+        </div>
+        </li>
+
+        <li class="list-group-item">
+        <div class="row">
+        <div class="col mb-3">
+        <label><b>@Model.CurrentPlayerName's turn</b></label>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-8 col-12">
+        <div class="row">
+        <div class="col-md-2 col-3">
+        <form asp-action="Roll" method="post">
+        <button type="submit" class="btn btn-dark @(Model.IsGameOver ? "disabled" : "")">Roll</button>
+        </form>
+        </div>
+        <div class="col-md-2 col-3 ps-1">
+        <form asp-action="Hold" method="post">
+        <button type="submit" class="btn btn-outline-dark @(Model.IsGameOver ? "disabled" : "")">Hold</button>
+        </form>
+        </div>
+        <div class="col-md-2 col-3 ps-1">
+        <label>Die:</label>
+        <label>@Model.LastRoll</label>
+        </div>
+        <div class="col ps-1">
+        <label>Total:</label>
+        <label>@Model.CurrentTurnScore</label>
+        </div>
+        </div>
+        </div>
+        @*div class="col form-inline">
+
+        <form asp-action="Roll" method="post">
+        <button type="submit" class="btn btn-dark me-2">Roll</button>
+        </form>
+        <form asp-action="Hold" method="post">
+        <button type="submit" class="btn btn-outline-dark me-2">Hold</button>
+        </form>
+
+        <label class="me-1">Die:</label>
+        <label>@Model.CurrentTurnScore</label>
+        </div>*@
+        </div>
+        </li>
+        </ul>
+        </div>
+
+        @* Rules column *@
+    <div class="col-md-4 col-12">
+        <div class="row">
+        <div class="col">
+        <ul class="list-group">
+        <li class="list-group-item">First player to @Game.WinningNumber wins.</li>
+        <li class="list-group-item">Player takes turns in rolling the die.</li>
+        <li class="list-group-item">Turn ends when player rolls a 1 or chooses to hold.</li>
+        <li class="list-group-item">If player rolls a 1, they lose all points earned during that turn.</li>
+        <li class="list-group-item">If player holds, points earned during that turn are added to their total.</li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+@**@
+@if (Model.Player1.Score == 20 || Model.Player2.Score == 20)
+{
+    <div class="alert bg-primary text-white text-center" role="alert">
+        @if (Model.Player1.Score == 20)
+        {
+            @Model.Player1.Name
+        }
+        else
+        {
+            @Model.Player2.Name
+        } wins!
+    </div>
+}
+@if (Model.Player1.Score >= 21 || Model.Player2.Score >= 21)
+{
+    <div class="alert bg-primary text-white text-center" role="alert">
+        @if (Model.Player1.Score >= 21)
+        {
+            @Model.Player2.Name
+        }
+        else
+        {
+            @Model.Player1.Name
+        } wins!
+    </div>
+}
+
