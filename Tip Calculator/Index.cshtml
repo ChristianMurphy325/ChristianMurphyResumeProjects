@@ -1,0 +1,31 @@
+﻿@model Calculator
+
+@{
+    ViewData["Title"] = "Tip Calculator";
+}
+
+<h1 style="color:blue;">Tip Calculator</h1>
+<link rel="stylesheet" href="~/css/site.css" />
+
+<form asp-action="Index" method="post">
+<div>
+<label asp-for="MealCost">Cost of meal:</label>
+<input asp-for="MealCost" type="number" step="0.01" required />
+</div>
+<div>
+<label>15% Tip:</label>
+<label>@ViewBag.Fifteen.ToString("c2")</label>
+</div>
+    <div>
+    <label>20% Tip:</label>
+    <label>@ViewBag.Twenty.ToString("c2")</label>
+    </div>
+    <div>
+    <label>25% Tip:</label>
+    <label>@ViewBag.TwentyFive.ToString("c2")</label>
+    </div>
+<div>
+    <button type="submit">Calculate</button>
+    <a asp-action="Index">clear</a>
+</div>
+</form>
