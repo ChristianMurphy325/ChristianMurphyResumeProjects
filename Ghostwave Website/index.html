@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL GHOSTWAVE STORE | GHOSTWAVE</title>
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="Javascript.js">
+</head>
+<body>
+    <div id="preloader"></div>
+    <header class="header">
+        <!-- Logo -->
+        <a href="index.html">
+            <img src="Images/EMBLEMHOLLOW.png" alt="Band Logo" class="logo">
+
+        </div>
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://www.shopify.com" target="_blank">
+            <img src="Images/cart.png" alt="Shopify" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://open.spotify.com" target="_blank">
+            <img src="Images/spotify.png" alt="Spotify" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+            <img src="Images/instagram.png" alt="Instagram" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook" style="width:25px;height:25px; margin-right: 40px;">
+            </a>
+            </div>
+    </header>
+
+    <!-- Band Logo -->
+        <div style="text-align: center; margin-top: 100px;">
+            <img src="Images/EMBLEMFULL.png" alt="Band Logo" style="width:700px;height:700px;">
+            <div style="border-bottom: 2px solid black; width: 100%; margin-top: 10px;"></div>
+            </div>
+
+    <!-- Band Bio -->
+    <div class="bio-container" style="text-align: center;">
+        <img src="Images/lly.jpg" alt="Band Promo" style="max-width: 100%; height: auto;">
+        <div class="underline"></div>
+        <div class="bio-text" style="max-width: 800px; margin: 20px auto;"></div>
+    </div>
+
+    <!-- Emblem -->
+    <div class="emblem" style="text-align: center;">
+        <img src="Images/EMBLEMHOLLOW.png" alt="Emblem" style="max-width: 100%; height: 100px;">
+    </div>
+
+    <!-- Contact -->
+    <h1>ENTER EMAIL TO RECEIVE LATEST MERCHANDISE UPDATES</h1>
+    <div class="form-container">
+        <form id="subscription-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+        </form>
+        <p class="message" id="thank-you-message">THANK YOU FOR SUBSCRIBING - GHOSTWAVE</p>
+        <p>© 2024, GHOSTWAVE</p>
+    </div>
+
+    <script>
+        function closepreloader(){
+        document.getElementById("preloader").style.display = 'none';
+        }
+        window.addEventListener("load",function(){
+            setTimeout(closepreloader, 2000);    
+        });
+        document.getElementById('subscription-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
