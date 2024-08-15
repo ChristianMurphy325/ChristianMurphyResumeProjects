@@ -50,12 +50,10 @@ p {
 .form-container {
     text-align: center;
     margin: 20px auto; 
-    font-family: 'Times New Roman', serif;
 }
 .form-container input {
     padding: 10px;
     margin: 10px;
-    font-family: 'Times New Roman', serif;
 }
 .underline {
     border-top: 2px solid black;
