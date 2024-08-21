@@ -4,12 +4,14 @@ body {
     margin: 0;
     font-family: 'Times New Roman', serif;
 }
+
 .logo {
     position: absolute;
     top: 35px;
     left: 10px;
     height: 50px;
 }
+
 .social-icons {
     position: absolute;
     top: 35px;
@@ -17,22 +19,26 @@ body {
     display: flex;
     align-items: center;
 }
+
 h1, h2 {
     font-size: 1.2em;
     text-align: center;
     font-style: italic;
     margin: 20px 0;
 }
+
 .bottom-underline {
-    border-top: 2px solid black; 
+    border-top: 2px solid black;
     width: 100%;
     margin-top: 20px;
 }
+
 p {
     font-size: 1.2em;
     text-align: center;
     font-style: italic;
 }
+
 .bio-container {
     display: center;
     align-items: center;
@@ -40,34 +46,42 @@ p {
     margin: 20px;
     gap: 20px;
 }
+
 .bio-container img {
-    max-width: 100%; 
-    height: auto; 
+    max-width: 100%;
+    height: auto;
 }
+
 .bio-text {
     max-width: 100%;
 }
+
 .form-container {
     text-align: center;
-    margin: 20px auto; 
+    margin: 20px auto;
 }
+
 .form-container input {
     padding: 10px;
     margin: 10px;
 }
+
 .underline {
     border-top: 2px solid black;
     width: 100%;
     margin: 10px auto;
 }
+
 .header {
-    position: relative;          
+    position: relative;
     padding: 10px;
 }
+
 a img:hover {
     transform: scale(1.1);
     opacity: 0.9;
 }
+
 #preloader {
     background: #000 url(Images/loader.gif) no-repeat center center;
     background-size: 15%;
@@ -76,9 +90,85 @@ a img:hover {
     position: fixed;
     z-index: 100;
 }
-.message {
-    display: none;
-    color: black;
-    font-size: 1.2em;
-    margin-top: 10px;
+
+@media only screen and (max-width: 400px) {
+    .logo {
+        height: 40px;
+        top: 20px;
+        left: 5px;
+    }
+    
+    .social-icons {
+        top: 20px;
+        right: 5px;
+    }
+    
+    h1, h2 {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+    
+    p {
+        font-size: 1em;
+    }
+    
+    .bio-container {
+        flex-direction: column;
+        margin: 10px;
+        gap: 10px;
+    }
+    
+    .form-container {
+        margin: 10px auto;
+    }
+    
+    .form-container input {
+        padding: 8px;
+        margin: 8px;
+    }
+    
+    #preloader {
+        background-size: 20%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .logo {
+        height: 45px;
+        top: 25px;
+        left: 8px;
+    }
+    
+    .social-icons {
+        top: 25px;
+        right: 8px;
+    }
+    
+    h1, h2 {
+        font-size: 1.1em;
+        margin: 15px 0;
+    }
+    
+    p {
+        font-size: 1.1em;
+    }
+    
+    .bio-container {
+        flex-direction: column;
+        margin: 15px;
+        gap: 15px;
+    }
+    
+    .form-container {
+        margin: 15px auto;
+    }
+    
+    .form-container input {
+        padding: 9px;
+        margin: 9px;
+    }
+    
+    #preloader {
+        background-size: 18%;
+    }
 }
