@@ -1,0 +1,53 @@
+h2, h4 {
+  color: whitesmoke;
+  font-family: lato;
+}
+
+
+body {
+    background-color: rgb(39, 63, 68);
+    font-family: Arial, sans-serif;
+    color: white;
+    
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+.styled-button {
+    background-color: whitesmoke;
+    color: black; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-button:hover {
+    background-color: blueviolet;
+    transform: scale(1.05);
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid whitesmoke;
+  background-color: whitesmoke;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  background-color: purple;
+  border-color: whitesmoke;
+}
+
+
+  

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resume Quiz</title>
+<link rel="stylesheet" href="Quiz Css.css">
+</head>
+<body>
+<a href="javascript:void(1);" onclick="window.location.reload();">
+<h2 style="text-align: center;">Quiz</h2>
+</a>
+
+<div id="result" style="text-align: center; margin-bottom: 20px;"></div>
+
+<h4 style="text-align: center;">Answer the questions below and click the submit button</h4>
+
+<br>1. What year did the Titanic Sink?</br>
+<ul>
+<li><input type="radio" name="question1" value="1920">1920<br></li>
+<li><input type="radio" name="question1" value="1912" id="correct">1912<br></li>
+<li><input type="radio" name="question1" value="1915">1915<br></li>
+<li><input type="radio" name="question1" value="1930">1930<br></li>
+</ul>
+
+<br>2. What year did World War 2 begin?</br>
+<ul>
+<li><input type="radio" name="question2" value="1939" id="correct1">1939<br></li>
+<li><input type="radio" name="question2" value="1944">1944<br></li>
+<li><input type="radio" name="question2" value="1950">1950<br></li>
+<li><input type="radio" name="question2" value="1961">1961<br></li>
+</ul>
+
+<br>3. Where was the first Chipotle grill created?</br>
+<ul>
+<li><input type="radio" name="question3" value="New Jersey">New Jersey<br></li>
+<li><input type="radio" name="question3" value="Arizona">Arizona<br></li>
+<li><input type="radio" name="question3" value="Maine">Maine<br></li>
+<li><input type="radio" name="question3" value="Colorado" id="correct2">Colorado<br></li>
+</ul>
+
+<br>4. What color is the Ex in the Fedex Ground Logo?</br>
+<ul>
+<li><input type="radio" name="question4" value="Green" id="correct3">Green<br></li>
+<li><input type="radio" name="question4" value="Red">Red<br></li>
+<li><input type="radio" name="question4" value="Brown">Brown<br></li>
+<li><input type="radio" name="question4" value="Blue">Blue<br></li>
+</ul>
+
+<br>5. What is the hottest planet in the solar system?</br>
+<ul>
+<li><input type="radio" name="question5" value="Mercury">Mercury<br></li>
+<li><input type="radio" name="question5" value="Mars">Mars<br></li>
+<li><input type="radio" name="question5" value="Venus" id="correct4">Venus<br></li>
+<li><input type="radio" name="question5" value="Jupiter">Jupiter<br></li>
+</ul>
+
+<br>6. What is the capital of Ohio?</br>
+<ul>
+<li><input type="radio" name="question6" value="Cleveland">Cleveland<br></li>
+<li><input type="radio" name="question6" value="Columbus">Columbus<br></li>
+<li><input type="radio" name="question6" value="Cincinnati" id="correct5">Cincinnati<br></li>
+<li><input type="radio" name="question6" value="Toledo">Toledo<br></li>
+</ul>
+
+<br>7. True or False. Penguins can fly?</br>
+<ul>
+<li><input type="radio" name="question7" value="True">True<br></li>
+<li><input type="radio" name="question7" value="False" id="correct6">False<br></li>
+</ul>
+
+<br>8. True or False. The ocean is salty?</br>
+<ul>
+<li><input type="radio" name="question8" value="True" id="correct7">True<br></li>
+<li><input type="radio" name="question8" value="False">False<br></li>
+</ul>
+
+<br>9. How many minutes are in a week?</br>
+<ul>
+<li><input type="radio" name="question9" value="9600">9,600<br></li>
+<li><input type="radio" name="question9" value="12120">12,120<br></li>
+<li><input type="radio" name="question9" value="10648">10,648<br></li>
+<li><input type="radio" name="question9" value="10080" id="correct8">10,080<br></li>
+</ul>
+
+<br>10. Where did sushi originate?</br>
+<ul>
+<li><input type="radio" name="question10" value="China">China<br></li>
+<li><input type="radio" name="question10" value="Japan">Japan<br></li>
+<li><input type="radio" name="question10" value="Rome">Rome<br></li>
+<li><input type="radio" name="question10" value="Australia" id="correct9">Australia<br></li>
+</ul>
+
+<div class="button-container">
+<input type="submit" name="submit" value="Submit" onclick="result()" class="styled-button">
+<input type="button" value="Clear Answers" onclick="clearAnswers()" class="styled-button">
+</div>
+
+<script type="text/javascript">
+function result() {
+    var score = 0;
+    var resultText = '';
+
+    var correctAnswers = [
+    'correct', 'correct1', 'correct2', 'correct3', 'correct4', 
+    'correct5', 'correct6', 'correct7', 'correct8', 'correct9'
+];
+
+for (var i = 1; i <= 10; i++) {
+    var question = document.getElementsByName('question' + i);
+    var correctAnswer = document.querySelector('#' + correctAnswers[i - 1]); 
+    var isAnswered = false;
+
+        question.forEach(function(answer) {
+        if (answer.checked) {
+        isAnswered = true;
+        if (answer === correctAnswer) {
+        score++;
+        resultText += 'Question ' + i + ': Correct<br>';
+        } else {
+        resultText += 'Question ' + i + ': Incorrect<br>';
+        }
+        }
+        });
+
+        if (!isAnswered) {
+            resultText += 'Question ' + i + ': Please select an answer<br>';
+        }
+    }
+
+    resultText += 'You got ' + score + ' out of 10 correct.';
+    document.getElementById('result').innerHTML = resultText;
+}
+
+function clearAnswers() {
+    var radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(radio) {
+    radio.checked = false;
+    });
+    document.getElementById('result').innerHTML = '';
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
