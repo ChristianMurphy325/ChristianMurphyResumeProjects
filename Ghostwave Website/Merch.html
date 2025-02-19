@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL GHOSTWAVE STORE | GHOSTWAVE</title>
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="Javascript.js">
+</head>
+<body>
+    <div id="preloader"></div>
+    <header class="header">
+        <!-- Logo -->
+        <div class="dropdown">
+            <a href="index.html">
+              <button class="emblemfull">
+                <img src="IMAGES/EMBLEMHOLLOW.png" alt="EmblemFull Logo">
+              </button>
+            <div class="content">
+                <a href="Merch.Html">Merch</a>
+                <a href="about.html">About</a>
+                <a href="Contact.html">Contact</a>
+            </div>
+        </div>
+
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://ghostwavestore.com/" target="_blank">
+            <img src="Images/cart.png" alt="Shopify" style="width:25px;height:25px; margin-
+            </a>
+            <a href="https://open.spotify.com/artist/55bMcKIop3e8jjW1UQs7h4?si=hD07AqYrT1yM
+            <img src="Images/spotify.png" alt="Spotify" style="width:25px;height:25px; marg
+            </a>
+            <a href="https://www.instagram.com/ghostwaveus" target="_blank">
+            <img src="Images/instagram.png" alt="Instagram" style="width:25px;height:25px; 
+            </a>
+            <a href="https://www.facebook.com/ghostwaveus" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook" style="width:25px;height:25px; ma
+            </a>
+            </div>
+    </header>
+
+ <!-- Merch Info -->
+<div class="merch" style="display: flex; justify-content: space-between; align-items: cente
+    <div class="merch-item" style="flex: 1; display: flex; flex-direction: column; justify-
+    <img src="Images/Hoodie.jpg" alt="Hoodie" style="max-width: 80%; height: 300px;">
+    <div class="merch-caption" style="margin-top: 10px; font-size: 16px; font-weight: bold;
+    </div>
+    <div class="merch-item" style="flex: 1; display: flex; flex-direction: column; justify-
+    <img src="Images/Shirt Blue.png" alt="Shirt Blue" style="max-width: 80%; height: 300px;
+    <div class="merch-caption" style="margin-top: 10px; font-size: 16px; font-weight: bold;
+    </div>
+    <div class="merch-item" style="flex: 1; display: flex; flex-direction: column; justify-
+    <img src="Images/Purple Shirt Back.png" alt="Purple Shirt Back" style="max-width: 80%; 
+    <div class="merch-caption" style="margin-top: 10px; font-size: 16px; font-weight: bold;
+    </div>
+    <div class="merch-item" style="flex: 1; display: flex; flex-direction: column; justify-
+    <img src="Images/Purple Sticker.jpg" alt="Purple Sticker" style="max-width: 80%; height
+    <div class="merch-caption" style="margin-top: 10px; font-size: 16px; font-weight: bold;
+    </div>
+</div>
+    
+    <!-- Emblem -->
+    <div class="emblem" style="text-align: center;">
+        <img src="Images/EMBLEMHOLLOW.png" alt="Emblem" style="max-width: 100%; height: 100
+    </div>
+
+    <!-- Contact -->
+    <h1>ENTER EMAIL TO RECEIVE LATEST MERCHANDISE UPDATES</h1>
+    <div class="form-container">
+        <form id="subscription-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+        </form>
+        <p class="message" id="thank-you-message">THANK YOU FOR SUBSCRIBING - GHOSTWAVE</p>
+        <p>© 2024, GHOSTWAVE</p>
+    </div>
+
+    <script>
+        function closepreloader(){
+        document.getElementById("preloader").style.display = 'none';
+        }
+        window.addEventListener("load",function(){
+            setTimeout(closepreloader, 2000);    
+        });
+        document.getElementById('subscription-form').addEventListener('submit', function(ev
+            event.preventDefault();
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
