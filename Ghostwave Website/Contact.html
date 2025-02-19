@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL GHOSTWAVE STORE | GHOSTWAVE</title>
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="Javascript.js">
+</head>
+<body>
+    <div id="preloader"></div>
+    <header class="header">
+        <!-- Logo -->
+        <div class="dropdown">
+            <a href="index.html">
+              <button class="emblemfull">
+                <img src="IMAGES/EMBLEMHOLLOW.png" alt="EmblemFull Logo">
+              </button>
+            <div class="content">
+                <a href="Merch.html">Merch</a>
+                <a href="about.html">About</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://ghostwavestore.com/" target="_blank">
+            <img src="Images/cart.png" alt="Shopify" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://open.spotify.com/artist/55bMcKIop3e8jjW1UQs7h4?si=hD07AqYrT1yMER5XhcOxVg" target="_blank">
+            <img src="Images/spotify.png" alt="Spotify" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://www.instagram.com/ghostwaveus" target="_blank">
+            <img src="Images/instagram.png" alt="Instagram" style="width:25px;height:25px; margin-right: 10px;">
+            </a>
+            <a href="https://www.facebook.com/ghostwaveus" target="_blank">
+            <img src="Images/facebook.png" alt="Facebook" style="width:25px;height:25px; margin-right: 40px;">
+            </a>
+            </div>
+    </header>
+
+    
+
+    <div class="container">
+        <form action="action_page.php">
+      
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="Name" placeholder="Name">
+      
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" placeholder="Email">
+
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="Phone Number">
+      
+          <label for="subject">Comment</label>
+          <textarea id="text" name="Comment" placeholder="Comment" style="height:200px"></textarea>
+      
+          <input type="submit" value="Submit">
+      
+        </form>
+      </div>
+
+
+    <!-- Emblem -->
+    <div class="emblem" style="text-align: center;">
+        <img src="Images/EMBLEMHOLLOW.png" alt="Emblem" style="max-width: 100%; height: 100px;">
+    </div>
+
+    <!-- Contact -->
+    <h1>ENTER EMAIL TO RECEIVE LATEST MERCHANDISE UPDATES</h1>
+    <div class="form-container">
+        <form id="subscription-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+        </form>
+        <p class="message" id="thank-you-message">THANK YOU FOR SUBSCRIBING - GHOSTWAVE</p>
+        <p>© 2024, GHOSTWAVE</p>
+    </div>
+
+    <script>
+        function closepreloader(){
+        document.getElementById("preloader").style.display = 'none';
+        }
+        window.addEventListener("load",function(){
+            setTimeout(closepreloader, 2000);    
+        });
+        document.getElementById('subscription-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('thank-you-message').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
