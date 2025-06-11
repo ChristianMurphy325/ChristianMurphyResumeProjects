@@ -1,4 +1,4 @@
-#Using Self in Python
+#Using Self in Python with TV example
 class TV:
     def __init__(self, brand: str, size: str, hertz: str) -> None:
         self.brand = brand
