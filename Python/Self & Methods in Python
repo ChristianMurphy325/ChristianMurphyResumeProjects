@@ -16,3 +16,33 @@ print(TV)
 print(Samsung.brand)
 print(Samsung.size)
 print(Samsung.hertz)
+
+
+#Using Methods with a TV example
+class TV:
+    def __init__(self, brand: str, size: str, hertz: str) -> None:
+        self.brand = brand
+        self.size = size
+        self.hertz = hertz
+        self.is_on: bool = False  # Renamed to avoid method/attribute conflict
+
+    def turn_on(self) -> None:
+        if self.is_on:
+            print(f'{self.brand} is already turned on.')
+        else:
+            self.is_on = True
+            print(f'{self.brand} turned on successfully.')
+
+    def turn_off(self) -> None:
+        if self.is_on:
+            self.is_on = False
+            print(f'{self.brand} turned off successfully.')
+        else:
+            print(f'{self.brand} is already turned off.')
+
+# Example usage
+LG = TV(brand='LG', size='65', hertz='60')
+LG.turn_on()
+
+Samsung = TV(brand='Samsung', size='70', hertz='120')
+Samsung.turn_on()
