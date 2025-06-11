@@ -1,0 +1,18 @@
+#Using Self in Python
+class TV:
+    def __init__(self, brand: str, size: str, hertz: str) -> None:
+        self.brand = brand
+        self.size = size
+        self.hertz = hertz
+
+LG = TV(brand='LG', size='65', hertz='60')
+print(TV)
+print(LG.brand)
+print(LG.size)
+print(LG.hertz)
+
+Samsung = TV(brand='Samsung', size='70', hertz='120')
+print(TV)
+print(Samsung.brand)
+print(Samsung.size)
+print(Samsung.hertz)
