@@ -40,7 +40,6 @@ class TV:
         else:
             print(f'{self.brand} is already turned off.')
 
-# Example usage
 LG = TV(brand='LG', size='65', hertz='60')
 LG.turn_on()
 
