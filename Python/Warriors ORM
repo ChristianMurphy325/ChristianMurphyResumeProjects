@@ -1,0 +1,52 @@
+#In this project, I am using an ORM sqlalchemy to create a database for the Golden State Warriors starting lineup
+
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine
+from sqlalchemy.orm import declarative_base, relationship, sessionmaker
+
+Base = declarative_base()
+
+class Position(Base):
+    __tablename__ = 'positions'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, unique=True, nullable=False)
+    players = relationship("Player", back_populates="position")
+
+class Player(Base):
+    __tablename__ = 'players'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    jersey_number = Column(Integer, nullable=False)
+    age = Column(Integer)
+    position_id = Column(Integer, ForeignKey('positions.id'))
+    position = relationship("Position", back_populates="players")
+
+engine = create_engine('sqlite:///warriors.db')
+Base.metadata.create_all(engine)
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+
+pg = Position(name='Point Guard')
+sg = Position(name='Shooting Guard')
+sf = Position(name='Small Forward')
+pf = Position(name='Power Forward')
+c = Position(name='Center')
+
+session.add_all([pg, sg, sf, pf, c])
+session.commit()
+
+curry = Player(name='Stephen Curry', jersey_number=30, age=37, position=pg)
+podziemski = Player(name='Brandin Podziemski', jersey_number=2, age=22, position=sg)
+green = Player(name='Draymond Green', jersey_number=23, age=35, position=sf)
+butler = Player(name='Jimmy Butler', jersey_number=10, age=35, position=pf)
+post = Player(name='Quinten Post', jersey_number=21, age=25, position=c)
+
+session.add_all([curry, podziemski, green, butler, post])
+session.commit()
+
+# --- Query Example ---
+for player in session.query(Player).all():
+    print(f"{player.name} wears #{player.jersey_number} and plays {player.position.name} for the Golden State Warriors")
