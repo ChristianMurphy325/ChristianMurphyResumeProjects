@@ -50,3 +50,15 @@ session.commit()
 # --- Query Example ---
 for player in session.query(Player).all():
     print(f"{player.name} wears #{player.jersey_number} and plays {player.position.name} for the Golden State Warriors")
+
+
+
+This is the print it will show you if you copy this code
+
+Stephen Curry wears #30 and plays Point Guard for the Golden State Warriors
+Brandin Podziemski wears #2 and plays Shooting Guard for the Golden State Warriors
+Draymond Green wears #23 and plays Small Forward for the Golden State Warriors
+Jimmy Butler wears #10 and plays Power Forward for the Golden State Warriors
+Quinten Post wears #21 and plays Center for the Golden State Warriors
+
+Process finished with exit code 0
